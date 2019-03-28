@@ -1,0 +1,73 @@
+Interlaced hex text encryption
+
+You have discovered that your enemies use a weak encryption method and you can intercept their messages.
+They convert their plain text to hexadecimal and concatenate the values,
+split the hex string in half and interlace the two strings in the following way:
+{{"AB"}}, {{"CD"}} <<interlace to>> {{"ACBD"}}
+
+Your task is to reverse the encryption and output the message as plain text.
+
+<<Encryption example:>>
+<<Plain Text:>>
+AB
+
+<<Convert to hex:>>
+41 42
+
+<<Concatenate:>>
+4142
+
+<<Split in half:>>
+Half 1: 41
+Half 2: 42
+
+<<Interlace:>>
+4412
+
+
+<<Line 1: >> Encrypted string [[E]]
+
+<<Line 1:>> Plain Text [[P]]
+
+Length of [[E]] % 2 = 0
+
+read e:string(500)
+write decrypted plain text
+
+e=input()
+print(bytes.fromhex(e[::2]+e[1::2]).decode())
+
+print(decrypted)
+
+41
+A
+42
+B
+
+4411
+AA
+4422
+BB
+
+53726087651770437f
+Whats up?
+507664866f1777467e332f
+Whats down?
+
+577466512603661b722067502605667167f2669c62e066782601774266f2260f67127241
+We are going to attack pearl harbor!
+564966836290763c260f669e7637220067132605762e6754661566ce66937635724e
+This is a realistic long sentence.
+
+6784665577882704
+hex text
+6280675476857748
+hext tex
+
+plain: Did you really take the time to decrypt this? Have a heart <3 ~Feriixu
+enc1: 4742679967402704729067f4765826097723635f621064c866c1779626057240661162b0665826057641678267542200734c639362d0675e2406764567f22609664967586735
+enc2: 3642337033463326336533783392339633603375334733063324337133063347337833223396330733653374636233423370336033573383332436633306339333793373332633323664333033566367336536253312330433603346633733863364336563363317367633723392336633203369330633563374332933463307336533683316331733633325
+
+plain: This is a double encrypted message.
+enc1: 55466e86639772372907609774362506641220066d4665f77357632661c6675625026e
+enc2: 33523352334033603366635636843364336633363395367633773327333333753327339633033372336633063391367333763346333733653326335233053360336233463615
